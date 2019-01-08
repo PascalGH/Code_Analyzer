@@ -7,3 +7,4 @@ def one_function():
 
 
 one_function()
+one_function()
