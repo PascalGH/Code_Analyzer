@@ -8,3 +8,6 @@ def one_function():
 
 one_function()
 one_function()
+
+# Another call to the function
+one_function()
