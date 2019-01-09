@@ -11,3 +11,5 @@ one_function()
 
 # Another call to the function
 one_function()
+
+print('Completed')
