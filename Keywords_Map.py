@@ -1,3 +1,6 @@
+comment_indicator = '#'
+eol_indicator = '\n'
+
 def for_fn():
     print('for block')
 

@@ -6,23 +6,23 @@ import re # Regular expressions
 
 mymap = Keywords_Map.keywords_map
 mykeys = (Keywords_Map.keywords)
-
-
-comment_indicator = '#'
-eol_indicator = '\n'
+mycomment = Keywords_Map.comment_indicator
+myeol = Keywords_Map.eol_indicator
 
 
 f = open("Analyser.py","r")
-content = f.read().split(eol_indicator)
+content = f.read().split(myeol)
 
-for line in content:
-    sub_line = line.split(comment_indicator)
-    if sub_line[0] != '':
+for line in content: #First loop
+    sub_line = line.split(mycomment)
+    if sub_line[0] != '':  #             First if
         term = sub_line[0].split()[0].lower()
         for i in mykeys:
-             if re.search(i,term):
+            if re.search(i,term): # Here we can count the number of spaces or tabs upfront to determine the indentation for Python
                 mymap[i]()
                 break
+        if len(sub_line) > 1:
+            print(f'Comment: ',sub_line[1])
     else:
         if len(sub_line) > 1:
             print(f'Comment: ',sub_line[1])
